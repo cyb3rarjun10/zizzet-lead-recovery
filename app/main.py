@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import RedirectResponse
 from app.api.v1.leads import router as leads_router
 from app.api.v1.webhooks import router as webhooks_router
 from app.core.config import settings
@@ -24,6 +25,11 @@ app.add_middleware(
 
 app.include_router(leads_router, prefix=settings.API_V1_PREFIX)
 app.include_router(webhooks_router, prefix=settings.API_V1_PREFIX)
+
+
+@app.get("/", include_in_schema=False)
+def root_redirect():
+    return RedirectResponse(url="/docs")
 
 
 @app.get("/health")
