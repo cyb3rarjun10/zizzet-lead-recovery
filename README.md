@@ -1,10 +1,10 @@
-# ⚡ Zizzet AI Lead Recovery Engine
+# Zizzet AI Lead Recovery Engine
 
 A high-performance, multi-tenant FastAPI backend service that analyzes inactive and high-intent sales leads, evaluates customer conversation history with Google Gemini LLM, and produces structured recovery recommendations with personalized follow-ups.
 
 ---
 
-## 🎯 System Architecture
+## System Architecture
 
 ```text
 Incoming Request / Webhook
